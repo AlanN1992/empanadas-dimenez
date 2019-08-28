@@ -1,0 +1,42 @@
+/** First Wollok example */
+object empleados
+ {	var sueldo = 15000
+ 	var dinero = 0
+ 	var deuda = 0
+ 	method sueldo ()
+ 		{
+ 			return sueldo
+ 		}
+ 	method sueldo(nuevoValor) 
+ 		{
+ 			sueldo = nuevoValor
+ 		}
+ 		
+ 	method cobrarSueldo ()
+ 		{
+ 			dinero += sueldo
+ 			
+ 			if (dinero >= deuda)
+ 				{
+ 					dinero -= deuda
+ 					deuda = 0
+ 				}
+ 			else 
+ 				{
+ 					deuda -= dinero
+ 					dinero = 0
+ 				}
+ 		}
+ 	
+ 	/* 
+	 method cobrarSueldo() 
+	{
+		dinero += sueldo
+		var aDescontar
+		aDescontar = deuda.min(dinero)
+		deuda -= aDescontar
+		dinero -= aDescontar
+	}  
+	
+	*/
+}
